@@ -59,14 +59,21 @@ $(function(){
                 })
             }
         }
-        doc.table(20, 70, data, headers, {
-            autoSize: true,
-            tableWidth: 'wrap',
-            margins: {
-                left: 1,
-                right: 1
+        // doc.table(20, 70, data, headers, {
+        //     autoSize: true,
+        //     tableWidth: 'wrap',
+        //     margins: {
+        //         left: 1,
+        //         right: 1
+        //     },
+        // });
+
+        doc.autoTable({
+            margin: {
+                top: 70
             },
-        });
+            html: '#overview-grade'
+        })
 
         doc.save( title + '.pdf');
     });
