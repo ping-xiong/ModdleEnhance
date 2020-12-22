@@ -31,12 +31,21 @@ $(function(){
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        try {
-            var logo = getBase64Image(document.getElementById('logo-img'))
-            doc.addImage(logo, "PNG", 90, 20, 30, 30);
-        }catch (e) {
-            alert('Incomplete or corrupt PNG file. Please try again.');
-        }
+        doc.addFont('SourceHanSans-Normal.ttf', 'SourceHanSans-Normal', 'normal');
+
+
+        // try {
+        //     var logo = getBase64Image(document.getElementById('logo-img'))
+        //     doc.addImage(logo, "PNG", 90, 20, 30, 30);
+        // }catch (e) {
+        //     alert('Incomplete or corrupt PNG file. Please try again.');
+        // }
+        doc.setFontSize(22);
+        doc.setFont('SourceHanSans-Normal');
+        doc.text('国际教育学院', 20, 20, {
+            alignment: "center"
+        });
+
 
         doc.setFontSize(22);
         doc.setFont("helvetica", "bold");
