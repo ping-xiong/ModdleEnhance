@@ -6,7 +6,8 @@ $(function(){
     var r = $('<input/>').attr({
         type: "button",
         id: "export-btn",
-        value: 'Export As PDF'
+        value: 'Export As PDF',
+        style: "margin: 20px"
     });
     $("#region-main").append(r);
 
@@ -26,13 +27,13 @@ $(function(){
 
         // get logo base64 image
 
-        var title = $('#region-main h2')[0].innerText;
+        var title = $('#page-header .h2')[0].innerText;
 
         // Default export is a4 paper, portrait, using millimeters for units
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        doc.addFont('SourceHanSans-Normal.ttf', 'SourceHanSans-Normal', 'normal');
+        //doc.addFont('SourceHanSansCN-VF', 'SourceHanSansCN-VF', 'normal');
 
 
         // try {
@@ -42,8 +43,8 @@ $(function(){
         //     alert('Incomplete or corrupt PNG file. Please try again.');
         // }
         doc.setFontSize(22);
-        doc.setFont('SourceHanSans-Normal');
-        doc.text('国际教育学院', 20, 20, {
+        //doc.setFont('SourceHanSans-Normal');
+        doc.text('SIE', 20, 20, {
             alignment: "center"
         });
 
