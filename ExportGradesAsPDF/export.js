@@ -1,7 +1,8 @@
 var logo_url = 'https://learn.sie-gxust.com/pluginfile.php/3615/block_html/content/SIE_logo_Small.png';
 
 $(function(){
-    // Add an export button to id region-main
+    if(window.location.href.indexOf("/grade/report/overview/index.php") >= 0){
+          // Add an export button to id region-main
     var r = $('<input/>').attr({
         type: "button",
         id: "export-btn",
@@ -86,6 +87,8 @@ $(function(){
 
         doc.save( title + '.pdf');
     });
+    }
+    
 });
 
 function getBase64Image(img) {
